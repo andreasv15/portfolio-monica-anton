@@ -1,38 +1,283 @@
-.App {
-  text-align: center;
+/* App.css - Paleta Crema Arena con Tipografía Grande */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+section {
+  /* Esto hace que al saltar a la sección, se detenga 80px antes del borde superior */
+  scroll-margin-top: 80px; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+  --bg-color: #f4f1ee;      /* Crema Arena Original */
+  --text-color: #2c2c2c;    /* Gris Carbón Profundo */
+  --light-text: #6b6b6b;    /* Gris secundario */
+  --card-bg: #fdfbf9;       /* Fondo tarjeta sutil */
+  --border-color: #e2deda;  /* Bordes suaves */
+  --font-main: 'Inter', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1100px; /* Un poco más ancho para albergar letras grandes */
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Navegación */
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+  animation: fadeIn 1s ease-in;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.1rem; /* Aumentado */
+}
+
+nav .links a {
+  text-decoration: none;
+  color: var(--text-color);
+  margin-left: 30px;
+  font-size: 1rem; /* Aumentado */
+  font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 140px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 3.8rem; /* Tamaño grande e impactante */
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin-bottom: 30px;
+}
+
+.hero-text p {
+  font-size: 1.5rem; /* Aumentado para mejor lectura */
+  color: var(--light-text);
+  line-height: 1.6;
+  font-weight: 300;
+  max-width: 600px;
+}
+
+.hero-image-container {
+  flex: 0 0 420px;
+}
+
+.profile-pic {
+  width: 100%;
+  border-radius: 8px;
+  mix-blend-mode: multiply;
+  opacity: 0.95;
+}
+
+/* Etiquetas de sección (SERVICIOS, FORMACIÓN...) */
+.section-label {
+  font-size: 0.85rem; /* Aumentado */
+  letter-spacing: 0.3em;
+  color: #8e8a86;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  display: block;
+  font-weight: 600;
+}
+
+/* Servicios (Cards) */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 120px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 50px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.8rem; /* Títulos de tarjeta más grandes */
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.card p {
+  color: var(--light-text);
+  font-size: 1.2rem; /* Cuerpo de tarjeta aumentado */
+  line-height: 1.7;
+}
+
+.btn-link {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.1rem; /* Enlace aumentado */
+  border-bottom: 2px solid var(--text-color);
+  padding-bottom: 4px;
+}
+
+/* Formación */
+.education-item {
+  display: flex;
+  gap: 60px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.education-year {
+  font-size: 1.1rem; /* Aumentado */
+  color: var(--light-text);
+  min-width: 140px;
+}
+
+.education-details h3 {
+  margin: 0;
+  font-size: 1.6rem; /* Aumentado */
+  font-weight: 500;
+}
+
+.education-details p {
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
+
+/* Contacto */
+.contact-lead {
+  font-size: 1.8rem; /* Muy legible para llamar a la acción */
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 800px;
+  margin-bottom: 70px;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding-top: 50px;
+  border-top: 1px solid var(--border-color);
+}
+
+.contact-item span {
+  display: block;
+  font-size: 0.8rem; /* Aumentado */
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #8e8a86;
+  margin-bottom: 15px;
+}
+
+.contact-item a {
+  font-size: 1.3rem; /* Enlaces de contacto grandes */
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  margin-top: 150px;
+  padding: 60px 0;
+  border-top: 1px solid var(--border-color);
+  color: var(--light-text);
+  font-size: 1rem; /* Aumentado */
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero { flex-direction: column-reverse; text-align: center; }
+  .hero-text h1 { font-size: 2.8rem; }
+  .hero-text p { font-size: 1.2rem; margin: 0 auto; }
+  .services-grid { grid-template-columns: 1fr; }
+  .contact-methods { grid-template-columns: 1fr; }
+  .hero-image-container { flex: 0 0 auto; width: 100%; max-width: 350px; }
+}
+
+
+/* Botón Volver Arriba */
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--text-color); /* Gris Carbón */
+  color: var(--bg-color); /* Crema Arena para la flecha */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.4s ease-out;
 }
 
-.App-link {
-  color: #61dafb;
+.back-to-top:hover {
+  transform: translateY(-5px);
+  background-color: var(--accent-color); /* Cambia al azul sutil al pasar el ratón */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Reutilizamos la animación fadeIn que ya teníamos */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
   }
 }
