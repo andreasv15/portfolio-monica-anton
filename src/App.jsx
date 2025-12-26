@@ -132,7 +132,7 @@ function App() {
 
 
       <footer style={{ marginTop: '100px', padding: '40px 0', borderTop: '1px solid #f0f0f0', color: '#999', fontSize: '0.8rem' }}>
-        <p>© {new Date().getFullYear()} Dra. Mónica Antón Ramos — Colegiada Nº [000000]</p>
+        <p>© {new Date().getFullYear()} Dra. Mónica Antón Ramos — Colegiada Nº [282891139]</p>
       </footer>
   
     </div>

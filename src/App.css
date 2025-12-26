@@ -213,7 +213,7 @@ footer {
   padding: 60px 0;
   border-top: 1px solid var(--border-color);
   color: var(--light-text);
-  font-size: 1rem; /* Aumentado */
+  font-size: 1rem !important; /* Aumentado */
   display: flex;
   justify-content: space-between;
 }
